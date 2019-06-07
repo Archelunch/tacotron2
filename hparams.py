@@ -11,9 +11,9 @@ def create_hparams(hparams_string=None, verbose=False):
         ################################
         epochs=500,
         iters_per_checkpoint=1000,
-        seed=1234,
+        seed=666,
         dynamic_loss_scaling=True,
-        fp16_run=False,
+        fp16_run=True,
         distributed_run=False,
         dist_backend="nccl",
         dist_url="tcp://localhost:54321",
@@ -25,8 +25,8 @@ def create_hparams(hparams_string=None, verbose=False):
         # Data Parameters             #
         ################################
         load_mel_from_disk=False,
-        training_files='filelists/ljs_audio_text_train_filelist.txt',
-        validation_files='filelists/ljs_audio_text_val_filelist.txt',
+        training_files='forvo_new/train.txt',
+        validation_files='forvo_new/val.txt',
         text_cleaners=['english_cleaners'],
 
         ################################
@@ -73,6 +73,8 @@ def create_hparams(hparams_string=None, verbose=False):
         postnet_embedding_dim=512,
         postnet_kernel_size=5,
         postnet_n_convolutions=5,
+        
+        persons=215,
 
         ################################
         # Optimization Hyperparameters #
